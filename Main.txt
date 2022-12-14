@@ -1,0 +1,28 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("universal script", "DarkTheme")
+local Aiming = Window:NewTab("AimLock | Aimbot")
+local Hitbix = Window:NewTab("Hitbox")
+local Q = Window:NewTab("Game script")
+local Setting = Window:NewTab("Setting")
+local Aiming1 = Aiming:NewSection("Aim lock")
+Aiming1:NewButton("aimlock by someone", "press v to use aimbot and press q to disable", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/huyXui/Universal-huyX/main/Aimlock%20by%20someone"))()
+end)
+Aiming1:NewLabel("
+Aimbot coming soon 😅🙏
+")
+local Hitbix1 = Hitbix:NewSection("hitbox")
+Hitbix1:NewDropdown("hitbox", "DropdownInf", {"5", "10", "15"}, function(currentOption)
+    _G.HeadSize = currentOption
+    _G.Disabled = true
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/huyXui/Universal-huyX/main/HITBOX1"))()
+end)
+local Q1 = Q:NewSection("Game script")
+Q1:NewLabel("
+Game Script coming soon 😅🙏
+")
+local Setting1 = Setting:NewSection("Setting")
+Setting1:NewKeybind("Keybind", "Keybind normal is M", Enum.KeyCode.M, function()
+	Library:ToggleUI()
+end)
+
