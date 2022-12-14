@@ -12,9 +12,9 @@ _G.FREE_FOR_ALL = false
 
 _G.BIND        = 118
 _G.ESP_BIND    = 49
-_G.CHANGE_AIM  = 'q'
+_G.CHANGE_AIM  = 'Q'
 
-_G.AIM_AT = 'Head'
+_G.AIM_AT = 'Torse'
 
 wait(1)
 
