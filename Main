@@ -22,6 +22,7 @@ Q1:NewLabel("
 Game Script coming soon 😅🙏
 ")
 local Setting1 = Setting:NewSection("Setting")
+Setting1:NewLabel("Script made by huy#2175")
 Setting1:NewKeybind("Keybind", "Keybind normal is M", Enum.KeyCode.M, function()
 	Library:ToggleUI()
 end)
