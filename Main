@@ -2,25 +2,58 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 local Window = Library.CreateLib("universal script", "DarkTheme")
 local Aiming = Window:NewTab("AimLock | Aimbot")
 local Hitbix = Window:NewTab("Hitbox")
+local Spider = Window:NewTab("Spider")
 local Q = Window:NewTab("Game script")
 local Setting = Window:NewTab("Setting")
+
+
 local Aiming1 = Aiming:NewSection("Aim lock")
 Aiming1:NewButton("aimlock by someone", "press v to use aimbot and press q to disable", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/huyXui/Universal-huyX/main/Aimlock%20by%20someone"))()
 end)
-Aiming1:NewLabel("
-Aimbot coming soon 😅🙏
-")
+
+
 local Hitbix1 = Hitbix:NewSection("hitbox")
-Hitbix1:NewDropdown("hitbox", "DropdownInf", {"5", "10", "15"}, function(currentOption)
-    _G.HeadSize = currentOption
+Hitbix1:NewTextBox("Size hitbox", "uses 5 - 10", function(SizeHitbox)
+    _G.HeadSize = SizeHitbox
     _G.Disabled = true
     loadstring(game:HttpGet("https://raw.githubusercontent.com/huyXui/Universal-huyX/main/HITBOX1"))()
 end)
+
+
+local Spider1 = Spider:NewSection("Spider")
+Spider1:NewToggle("Esp Items | Spider |", "only work on Spider", function(state)
+    if state then
+    
+ wait (1)
+        for __,v in pairs(game.Workspace.Items:GetChildren()) do
+if v:IsA("Model") or v:IsA("Part") or v:IsA("MeshPart") then
+local a = Instance.new("BillboardGui",v)
+a.Size = UDim2.new(1,0, 1,0)
+a.Name = "A"
+a.AlwaysOnTop = true
+local b = Instance.new("Frame",a)
+b.Size = UDim2.new(1,0, 1,0)
+b.BackgroundTransparency = 1
+b.BorderSizePixel = 0
+local c = Instance.new("TextLabel",b)
+c.Text = v.Name
+c.Size = UDim2.new(1,0, 1,0)
+c.BackgroundTransparency = 1
+c.BorderSizePixel = 0
+    end
+end
+    else
+       print("")
+    end
+end)
+
+
 local Q1 = Q:NewSection("Game script")
-Q1:NewLabel("
-Game Script coming soon 😅🙏
-")
+Q1:NewButton("Comming soon", "ButtonInfo", function()
+    print("Clicked")
+end)
+
 local Setting1 = Setting:NewSection("Setting")
 Setting1:NewLabel("Script made by huy#2175")
 Setting1:NewKeybind("Keybind", "Keybind normal is M", Enum.KeyCode.M, function()
